@@ -84,6 +84,8 @@
       <module fileurl="file://$PROJECT_DIR$/plugins/agent-workbench/sessions/intellij.agent.workbench.sessions.tests.iml" filepath="$PROJECT_DIR$/plugins/agent-workbench/sessions/intellij.agent.workbench.sessions.tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/agent-workbench/sessions-toolwindow/intellij.agent.workbench.sessions.toolwindow.iml" filepath="$PROJECT_DIR$/plugins/agent-workbench/sessions-toolwindow/intellij.agent.workbench.sessions.toolwindow.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/agent-workbench/sessions-toolwindow/intellij.agent.workbench.sessions.toolwindow.tests.iml" filepath="$PROJECT_DIR$/plugins/agent-workbench/sessions-toolwindow/intellij.agent.workbench.sessions.toolwindow.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/agent-workbench/terminal/sessions/intellij.agent.workbench.terminal.sessions.iml" filepath="$PROJECT_DIR$/plugins/agent-workbench/terminal/sessions/intellij.agent.workbench.terminal.sessions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/agent-workbench/terminal/sessions/intellij.agent.workbench.terminal.sessions.tests.iml" filepath="$PROJECT_DIR$/plugins/agent-workbench/terminal/sessions/intellij.agent.workbench.terminal.sessions.tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/agent-workbench/vcs-merge/intellij.agent.workbench.vcs.merge.iml" filepath="$PROJECT_DIR$/plugins/agent-workbench/vcs-merge/intellij.agent.workbench.vcs.merge.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/agent-workbench/vcs-merge/intellij.agent.workbench.vcs.merge.tests.iml" filepath="$PROJECT_DIR$/plugins/agent-workbench/vcs-merge/intellij.agent.workbench.vcs.merge.tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/android/android-adb/intellij.android.adb.iml" filepath="$PROJECT_DIR$/android/android-adb/intellij.android.adb.iml" />
@@ -1136,6 +1138,7 @@
       <module fileurl="file://$PROJECT_DIR$/libraries/stream/intellij.libraries.stream.iml" filepath="$PROJECT_DIR$/libraries/stream/intellij.libraries.stream.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/swingx/intellij.libraries.swingx.iml" filepath="$PROJECT_DIR$/libraries/swingx/intellij.libraries.swingx.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/system-stubs-jupiter/intellij.libraries.system.stubs.jupiter.iml" filepath="$PROJECT_DIR$/libraries/system-stubs-jupiter/intellij.libraries.system.stubs.jupiter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/teamcity/service-messages/intellij.libraries.teamcity.service.messages.iml" filepath="$PROJECT_DIR$/libraries/teamcity/service-messages/intellij.libraries.teamcity.service.messages.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/testcontainers/intellij.libraries.testcontainers.iml" filepath="$PROJECT_DIR$/libraries/testcontainers/intellij.libraries.testcontainers.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/testng/intellij.libraries.testng.iml" filepath="$PROJECT_DIR$/libraries/testng/intellij.libraries.testng.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/velocity/intellij.libraries.velocity.iml" filepath="$PROJECT_DIR$/libraries/velocity/intellij.libraries.velocity.iml" />
@@ -1515,6 +1518,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/navbar/backend/intellij.platform.navbar.backend.iml" filepath="$PROJECT_DIR$/platform/navbar/backend/intellij.platform.navbar.backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform/navbar/frontend/intellij.platform.navbar.frontend.iml" filepath="$PROJECT_DIR$/platform/navbar/frontend/intellij.platform.navbar.frontend.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform/navbar/monolith/intellij.platform.navbar.monolith.iml" filepath="$PROJECT_DIR$/platform/navbar/monolith/intellij.platform.navbar.monolith.iml" />
+      <module fileurl="file://$PROJECT_DIR$/platform/navbar/plugin/intellij.platform.navbar.plugin.iml" filepath="$PROJECT_DIR$/platform/navbar/plugin/intellij.platform.navbar.plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform/navbar/testFramework/intellij.platform.navbar.testFramework.iml" filepath="$PROJECT_DIR$/platform/navbar/testFramework/intellij.platform.navbar.testFramework.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform/object-serializer/intellij.platform.objectSerializer.iml" filepath="$PROJECT_DIR$/platform/object-serializer/intellij.platform.objectSerializer.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform/object-serializer/intellij.platform.objectSerializer.annotations.iml" filepath="$PROJECT_DIR$/platform/object-serializer/intellij.platform.objectSerializer.annotations.iml" />

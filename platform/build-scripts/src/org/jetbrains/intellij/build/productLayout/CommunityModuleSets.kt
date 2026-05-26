@@ -79,6 +79,8 @@ object CommunityModuleSets {
 
     // Additional library sets not in corePlatform but needed by essentialMinimal+
     moduleSet(librariesKtor())  // For RPC/Remote Dev
+    embeddedModule("intellij.libraries.teamcity.service.messages")
+    embeddedModule("intellij.platform.buildScripts.downloader")
     moduleSet(librariesMisc())  // For specialized uses (XML-RPC, CSV, document store)
 
     embeddedModule("intellij.platform.credentialStore.ui")
@@ -131,12 +133,6 @@ object CommunityModuleSets {
     // This attribute should be removed once the find module no longer needs to be embedded.
     embeddedModule("intellij.platform.scopes")
     module("intellij.platform.scopes.backend")
-
-    // todo navbar is not essential
-    module("intellij.platform.navbar")
-    module("intellij.platform.navbar.backend")
-    module("intellij.platform.navbar.frontend")
-    module("intellij.platform.navbar.monolith")
 
     // The loading="embedded" attribute is required here for module synchronization with CWM's ThinClientFindAndReplaceExecutor.
     // Since intellij.platform.frontend.split module loads in embedded mode, and it needs to override the default FindAndReplaceExecutor,
@@ -416,10 +412,6 @@ object CommunityModuleSets {
     moduleSet(xml())
     moduleSet(duplicates())
     embeddedModule("intellij.libraries.batik")
-
-    // IJent platform modules
-    module("intellij.platform.ijent.impl")
-    module("intellij.platform.ijent.wsl")
 
     // Note: rd.common is intentionally NOT included in ide.common
     // Reason: Rider uses custom module loading mode due to early backend startup requirements.

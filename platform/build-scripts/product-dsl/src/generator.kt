@@ -48,7 +48,7 @@ internal fun appendDefaultProductPluginMetadata(sb: StringBuilder, spec: Product
  * Generates an XML file for a module set.
  * Used to maintain backward compatibility with XML-based module set loading.
  * 
- * For non-pluginized module sets, XML files contain inlined module definitions - all direct
+ * Module set XML files contain inlined module definitions - all direct
  * modules and nested module sets are expanded into `<module>` elements. The `inlineModuleSets`
  * parameter (used in product XML generation) only affects whether PRODUCT XMLs reference
  * these files via xi:include or inline them directly.
@@ -207,7 +207,7 @@ private fun sortTestPluginContentSpec(spec: ProductModulesContentSpec): ProductM
       moduleSetWithOverrides.copy(moduleSet = sortModuleSet(moduleSetWithOverrides.moduleSet))
     }
     .sortedBy { it.moduleSet.name }
-  val sortedAdditionalModules = spec.additionalModules.sortedBy { it.name.value }
+  val sortedAdditionalModules = spec.additionalModules.sortedBy { it.moduleId.name }
 
   return ProductModulesContentSpec(
     productModuleAliases = spec.productModuleAliases,
@@ -224,7 +224,7 @@ private fun sortTestPluginContentSpec(spec: ProductModulesContentSpec): ProductM
 }
 
 private fun sortModuleSet(moduleSet: ModuleSet): ModuleSet {
-  val sortedModules = moduleSet.modules.sortedBy { it.name.value }
+  val sortedModules = moduleSet.modules.sortedBy { it.moduleId.name }
   val sortedNestedSets = moduleSet.nestedSets
     .map { sortModuleSet(it) }
     .sortedBy { it.name }
@@ -287,8 +287,7 @@ fun buildProductContentXml(
     }
 
     // Generate module sets as xi:includes or inline content blocks
-    val hasRenderableModuleSets = spec.moduleSets.any { it.moduleSet.pluginSpec == null }
-    if (hasRenderableModuleSets) {
+    if (spec.moduleSets.isNotEmpty()) {
       if (inlineModuleSets) {
         // Generate single content block with all module sets inlined
         append("  <content namespace=\"$JETBRAINS_NAMESPACE\">\n")
@@ -296,7 +295,8 @@ fun buildProductContentXml(
           if (block.source == ADDITIONAL_MODULES_BLOCK) continue // Skip additional modules, handle separately
           withEditorFold(this, "    ", block.source) {
             for (module in block.modules) {
-              val comment = moduleCommentProvider?.invoke(module.name, moduleToSetChainMapping[module.name])
+              val moduleName = module.contentName()
+              val comment = moduleCommentProvider?.invoke(moduleName, moduleToSetChainMapping[moduleName])
               appendModuleLine(module, "    ", comment)
             }
           }
@@ -310,7 +310,7 @@ fun buildProductContentXml(
       else {
         // Build set of module set names that are referenced at top-level WITH overrides
         // These cannot be brought in via `xi:include` from parent sets (would lose overrides)
-        val moduleSetsForProductContent = spec.moduleSets.filter { it.moduleSet.pluginSpec == null }
+        val moduleSetsForProductContent = spec.moduleSets
 
         val overriddenModuleSetNames = moduleSetsForProductContent
           .filter { it.hasOverrides }
@@ -338,7 +338,8 @@ fun buildProductContentXml(
         blockSource = additionalBlock.source,
         modules = additionalBlock.modules,
         commentProvider = if (moduleCommentProvider == null) null else { module ->
-          moduleCommentProvider(module.name, moduleToSetChainMapping[module.name])
+          val moduleName = module.contentName()
+          moduleCommentProvider(moduleName, moduleToSetChainMapping[moduleName])
         },
       )
     }

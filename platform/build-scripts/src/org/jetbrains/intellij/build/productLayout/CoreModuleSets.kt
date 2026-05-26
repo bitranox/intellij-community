@@ -280,6 +280,8 @@ object CoreModuleSets {
   fun corePlatform(): ModuleSet = moduleSet("core.platform", selfContained = true, outputModule = "intellij.platform.ide.core", includeDependencies = true) {
     moduleSet(librariesPlatform())
 
+    embeddedModule("intellij.platform.runtime.product")
+
     embeddedModule("intellij.platform.diagnostic.telemetry")
 
     embeddedModule("intellij.platform.util.ex")
@@ -398,6 +400,8 @@ object CoreModuleSets {
 
     embeddedModule("intellij.platform.statistics")
     embeddedModule("intellij.platform.statistics.config")
+    embeddedModule("intellij.platform.statistics.uploader")
+    embeddedModule("intellij.platform.experiment")
     embeddedModule("intellij.platform.ide.impl")
 
     embeddedModule("intellij.platform.rd.community")

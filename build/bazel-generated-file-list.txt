@@ -515,6 +515,7 @@ libraries/sshj
 libraries/stream
 libraries/swingx
 libraries/system-stubs-jupiter
+libraries/teamcity/service-messages
 libraries/testcontainers
 libraries/testng
 libraries/velocity
@@ -730,6 +731,7 @@ platform/multiplatformSupport
 platform/navbar/backend
 platform/navbar/frontend
 platform/navbar/monolith
+platform/navbar/plugin
 platform/navbar/shared
 platform/navbar/testFramework
 platform/new-ui-onboarding
@@ -960,6 +962,7 @@ plugins/agent-workbench/sessions-actions
 plugins/agent-workbench/sessions-core
 plugins/agent-workbench/sessions-launch-config/backend
 plugins/agent-workbench/sessions-toolwindow
+plugins/agent-workbench/terminal/sessions
 plugins/agent-workbench/vcs-merge
 plugins/ant
 plugins/ant/jps-plugin
